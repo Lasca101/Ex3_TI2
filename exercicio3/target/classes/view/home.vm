@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Pessoas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+        #addModal {
+            display: none;
+        }
+        #editModal {
+            display: none;
+        }
+        #deleteModal {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD de Pessoas</h1>
+    <button class="add-button" onclick="showAddModal()"><a href="/insert">Adicionar Pessoa</a></button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Carro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            $tabela
+            <!-- Adicione mais linhas para mais registros -->
+        </tbody>
+    </table>
+
+    <!-- Modal de Adicionar Pessoa -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close"><a href="/">&times;</a></span>
+            <h2>Adicionar Pessoa</h2>
+            <form method="post">
+                <!-- Campos para adicionar uma nova pessoa -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br><br>
+                
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="idade"><br><br>
+                
+                <label for="carro">Carro:</label>
+                <input type="text" id="carro" name="carro"><br><br>
+                
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Editar Pessoa -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close"><a href="/">&times;</a></span>
+            <h2>Editar Pessoa</h2>
+            <form method="post">
+                <!-- Campos para editar a pessoa selecionada -->
+                <label for="editNome">Nome:</label>
+                <input type="text" id="editNome" name="editNome"><br><br>
+                
+                <label for="editIdade">Idade:</label>
+                <input type="text" id="editIdade" name="editIdade"><br><br>
+                
+                <label for="editCarro">Carro:</label>
+                <input type="text" id="editCarro" name="editCarro"><br><br>
+                
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Excluir Pessoa -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close"><a href="/">&times;</a></span>
+            <h2>Excluir Pessoa</h2>
+            <p>Você tem certeza de que deseja excluir esta pessoa?</p>
+            <form method="post"> <button>Sim</button> </form>
+            <button><a href="/">Cancelar</a></button>
+        </div>
+    </div>
+</body>
+</html>
